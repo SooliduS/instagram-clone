@@ -16,8 +16,15 @@ import post3 from '../assets/post3.png';
 import post4 from '../assets/post4.png';
 import post5 from '../assets/post5.png';
 import post7 from '../assets/post7.png';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+    const navigate = useNavigate();
+
+    const handleNavigateToSavedPage = () => {
+        navigate('/saved');
+    };
+
     return (
         <Layout>
             <div className='mx-6 mb-7 flex justify-between items-center'>
@@ -28,7 +35,11 @@ const Profile = () => {
                     </span>
                 </div>
                 <div className='flex'>
-                    <IconElement icon={Save} className='mr-[17px]' />
+                    <IconElement
+                        icon={Save}
+                        className='mr-[17px] cursor-pointer'
+                        onClick={handleNavigateToSavedPage}
+                    />
                     <IconElement icon={Add} className='mr-6' />
                     <IconElement icon={Hamburger} />
                 </div>

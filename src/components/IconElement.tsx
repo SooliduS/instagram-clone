@@ -4,10 +4,17 @@ type IconElementProps = {
     icon: string;
     size?: 'medium' | 'large' | 'small';
     className?: string;
+    onClick?: () => void;
 };
-const IconElement: FC<IconElementProps> = ({ icon, size, className }) => {
+const IconElement: FC<IconElementProps> = ({
+    icon,
+    size,
+    className,
+    onClick,
+}) => {
     return (
         <img
+            onClick={onClick}
             src={icon}
             className={`${
                 size === 'small'
